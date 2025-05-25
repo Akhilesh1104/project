@@ -58,7 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {product.description}
         </p>
         <div className="flex justify-between items-center">
-          <span className="inline-block px-2 py-1 text-xs bg-gray-100 dark:bg-dark-surface-elevated text-gray-600 dark:text-dark-muted rounded-full capitalize border border-gray-300 dark:border-gray-600">
+          <span className="inline-block px-2 py-1 font-medium text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 rounded-full capitalize border border-amber-600">
             {product.type}
           </span>
           <span className="text-xs text-gray-500 dark:text-dark-muted">

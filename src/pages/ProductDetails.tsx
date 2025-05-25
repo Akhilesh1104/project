@@ -142,7 +142,7 @@ const ProductDetails: React.FC = () => {
 
             {/* Product Info */}
             <div>
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 rounded-full mb-4 capitalize">
+              <span className="inline-block px-3 py-1 border border-amber-600 text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 rounded-full mb-4 capitalize">
                 {product.type}
               </span>
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -250,7 +250,7 @@ const ProductDetails: React.FC = () => {
                   {product.details.recommended.map((use, index) => (
                     <span 
                       key={index}
-                      className="inline-block px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+                      className="inline-block px-3 py-1 border border-amber-600 text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 rounded-full"
                     >
                       {use}
                     </span>
