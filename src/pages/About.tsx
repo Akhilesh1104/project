@@ -19,7 +19,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-16 lg:pt-20">
+    <div className="min-h-screen bg-white dark:bg-black pt-16 lg:pt-20">
       {/* Hero Section */}
       <div className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -68,7 +68,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Values</h2>
@@ -78,7 +78,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white dark:bg-black p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-800">
               <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-4">
                 <Award className="text-amber-600" size={24} />
               </div>
@@ -88,7 +88,7 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white dark:bg-black p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-800">
               <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-4">
                 <Users className="text-amber-600" size={24} />
               </div>
@@ -98,7 +98,7 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white dark:bg-black p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-800">
               <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-4">
                 <MapPin className="text-amber-600" size={24} />
               </div>
@@ -108,7 +108,7 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="bg-white dark:bg-black p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-800">
               <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-4">
                 <Clock className="text-amber-600" size={24} />
               </div>
@@ -156,7 +156,7 @@ const About: React.FC = () => {
             ].map((member, index) => (
               <div 
                 key={index} 
-                className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
+                className="bg-white dark:bg-black rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-800"
               >
                 <div className="aspect-square overflow-hidden">
                   <img 
@@ -176,7 +176,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">What Our Clients Say</h2>
@@ -205,7 +205,7 @@ const About: React.FC = () => {
             ].map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
+                className="bg-white dark:bg-black p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-800"
               >
                 <svg className="text-amber-600 mb-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.6667 13.3333H5.33333V8H10.6667V13.3333ZM26.6667 13.3333H21.3333V8H26.6667V13.3333ZM10.6667 29.3333H5.33333V24H10.6667V29.3333ZM26.6667 29.3333H21.3333V24H26.6667V29.3333Z" fill="currentColor"/>

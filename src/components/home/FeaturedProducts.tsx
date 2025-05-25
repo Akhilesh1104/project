@@ -14,14 +14,14 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ products }) => {
   const featuredProducts = products.filter(product => product.featured);
   
   return (
-    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 md:py-24 bg-gray-50 dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text mb-4">
               Featured Products
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl">
+            <p className="text-gray-600 dark:text-dark-muted max-w-2xl">
               Explore our handpicked selection of premium natural stone products that add elegance and value to any space.
             </p>
           </div>

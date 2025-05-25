@@ -55,9 +55,9 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="pt-16 lg:pt-20">
+    <div className="min-h-screen bg-white dark:bg-black pt-16 lg:pt-20">
       {/* Hero Section */}
-      <div className="bg-gray-100 dark:bg-gray-900 py-12 md:py-16">
+      <div className="bg-gray-100 dark:bg-black py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Contact Us
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
                     />
                   </div>
                   <div>
@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
                     />
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
                     />
                   </div>
                   <div>
@@ -141,7 +141,7 @@ const Contact: React.FC = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
                     >
                       <option value="">Select a subject</option>
                       <option value="Product Inquiry">Product Inquiry</option>
@@ -163,7 +163,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
                   ></textarea>
                 </div>
                 
@@ -184,7 +184,7 @@ const Contact: React.FC = () => {
                 Contact Information
               </h2>
               
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+              <div className="bg-white dark:bg-black rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800">
                 <div className="aspect-video relative">
                   <img 
                     src="https://img.freepik.com/free-photo/3d-rendering-modern-luxury-hotel-office-reception-meeting-lounge_105762-2023.jpg?ga=GA1.1.1184042227.1748181306&semt=ais_hybrid&w=740"
@@ -262,7 +262,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
+      <section className="py-12 md:py-16 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -299,7 +299,7 @@ const Contact: React.FC = () => {
               ].map((faq, index) => (
                 <details 
                   key={index}
-                  className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm"
+                  className="group bg-white dark:bg-black rounded-lg shadow-sm border border-gray-200 dark:border-gray-800"
                 >
                   <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-6">
                     <span className="text-gray-900 dark:text-white">{faq.question}</span>

@@ -18,45 +18,58 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+    @apply font-semibold tracking-tight;
   }
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm;
   }
 
   .btn-primary {
-    @apply bg-light-text text-light-bg dark:bg-dark-text dark:text-dark-bg hover:scale-105;
+    @apply bg-light-accent text-white dark:bg-dark-accent hover:opacity-90 hover:scale-105;
   }
 
   .btn-outline {
-    @apply border-2 border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-light-text hover:text-light-bg dark:hover:bg-dark-text dark:hover:text-dark-bg;
+    @apply border-2 border-light-accent text-light-accent dark:border-dark-accent dark:text-dark-accent 
+           hover:bg-light-accent hover:text-white dark:hover:bg-dark-accent dark:hover:text-white;
   }
 
   .nav-link {
-    @apply relative py-2 text-light-text dark:text-dark-text transition-colors duration-300;
+    @apply relative py-2 text-light-text dark:text-dark-text transition-colors duration-300 hover:text-light-accent dark:hover:text-dark-accent;
   }
 
   .nav-link::after {
-    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-light-text dark:bg-dark-text transition-all duration-300;
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-light-accent dark:bg-dark-accent transition-all duration-300;
   }
 
   .nav-link:hover::after,
   .nav-link.active::after {
     @apply w-full;
   }
+
+  .card {
+    @apply bg-light-surface dark:bg-dark-surface rounded-xl shadow-sm border border-light-border dark:border-dark-border 
+           transition-all duration-300 hover:shadow-md;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-light-border dark:border-dark-border 
+           bg-light-surface dark:bg-dark-surface text-light-text dark:text-dark-text
+           focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent focus:border-transparent
+           transition-all duration-300;
+  }
 }
 
 /* Swiper customization */
 .swiper-button-next,
 .swiper-button-prev {
-  @apply text-light-text dark:text-dark-text !important;
+  @apply text-light-accent dark:text-dark-accent !important;
 }
 
 .swiper-pagination-bullet {
-  @apply bg-light-text dark:bg-dark-text !important;
+  @apply bg-light-accent dark:bg-dark-accent !important;
 }
 
 /* AOS customization */
@@ -70,16 +83,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-light-bg dark:bg-dark-bg;
+  @apply bg-light-surface dark:bg-dark-surface;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-light-text/20 dark:bg-dark-text/20 rounded-full hover:bg-light-text/30 dark:hover:bg-dark-text/30 transition-colors;
+  @apply bg-light-muted/30 dark:bg-dark-muted/30 rounded-full 
+         hover:bg-light-muted/50 dark:hover:bg-dark-muted/50 transition-colors;
 }
 
 /* Focus styles */
 :focus-visible {
-  @apply outline-2 outline-light-text dark:outline-dark-text outline-offset-2 rounded;
+  @apply outline-2 outline-light-accent dark:outline-dark-accent outline-offset-2 rounded;
 }
 
 /* Theme transition */

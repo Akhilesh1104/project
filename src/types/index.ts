@@ -14,8 +14,14 @@ export interface Product {
   unit: string;
   image: string;
   description: string;
-  details: ProductDetails;
+  category: string;
   featured: boolean;
+  details: {
+    origin: string;
+    thickness: string;
+    finish: string;
+    maintenance: string;
+  };
 }
 
 export type Category = {
