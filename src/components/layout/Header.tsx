@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingCart, Search } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
+import { useCart } from '../../context/CartContext';
 import ThemeToggle from '../ui/ThemeToggle';
 import SearchModal from '../ui/SearchModal';
 import Logo from '../ui/Logo';
@@ -11,6 +12,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { theme } = useTheme();
+  const { items } = useCart();
   const location = useLocation();
 
   // Handle scroll effect for transparent header
@@ -87,7 +89,7 @@ const Header: React.FC = () => {
               </button>
               <Link 
                 to="/cart" 
-                className={`p-1 rounded-full transition-colors duration-300 ${
+                className={`p-1 rounded-full transition-colors duration-300 relative ${
                   isScrolled || theme === 'dark'
                     ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
                     : 'text-white hover:text-amber-200'
@@ -95,6 +97,11 @@ const Header: React.FC = () => {
                 aria-label="Cart"
               >
                 <ShoppingCart size={20} />
+                {items.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {items.length}
+                  </span>
+                )}
               </Link>
 
               {/* Mobile menu button */}

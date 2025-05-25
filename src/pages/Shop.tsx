@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ui/ProductCard';
 import { products } from '../data/products';
 import { Product } from '../types';
-import { Filter, X } from 'lucide-react';
+import { Filter, X, SlidersHorizontal, Check } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 const Shop: React.FC = () => {
@@ -57,14 +57,14 @@ const Shop: React.FC = () => {
             variant="outline"
             className="w-full flex items-center justify-center"
           >
-            <Filter size={18} className="mr-2" />
+            <SlidersHorizontal size={18} className="mr-2" />
             Filters
           </Button>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Sidebar */}
-          <div className={`fixed inset-0 z-50 lg:relative lg:z-auto lg:w-64 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent transform ${isFilterOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out`}>
+          <div className={`fixed inset-0 z-50 lg:relative lg:z-auto lg:w-72 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent transform ${isFilterOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out`}>
             <div className="h-full lg:h-auto overflow-y-auto lg:overflow-visible p-6 lg:p-0">
               <div className="flex items-center justify-between mb-6 lg:hidden">
                 <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h2>
@@ -76,70 +76,59 @@ const Shop: React.FC = () => {
                 </button>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Category Filter */}
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-3">Category</h3>
-                  <div className="space-y-2">
-                    {categories.map(category => (
-                      <label key={category} className="flex items-center">
-                        <input
-                          type="radio"
-                          name="category"
-                          checked={selectedCategory === category}
-                          onChange={() => setSelectedCategory(category)}
-                          className="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 dark:border-gray-600"
-                        />
-                        <span className="ml-2 text-sm text-gray-700 dark:text-gray-300 capitalize">
-                          {category}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+                
 
                 {/* Type Filter */}
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-3">Type</h3>
+                  <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Category</h3>
                   <div className="space-y-2">
                     {types.map(type => (
-                      <label key={type} className="flex items-center">
-                        <input
-                          type="radio"
-                          name="type"
-                          checked={selectedType === type}
-                          onChange={() => setSelectedType(type)}
-                          className="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 dark:border-gray-600"
-                        />
-                        <span className="ml-2 text-sm text-gray-700 dark:text-gray-300 capitalize">
-                          {type}
-                        </span>
-                      </label>
+                      <button
+                        key={type}
+                        onClick={() => setSelectedType(selectedType === type ? null : type)}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-lg transition-colors duration-200 ${
+                          selectedType === type
+                            ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-neutral-900'
+                        }`}
+                      >
+                        <span className="capitalize">{type}</span>
+                        {selectedType === type && (
+                          <Check size={16} className="text-amber-600 dark:text-amber-400" />
+                        )}
+                      </button>
                     ))}
                   </div>
                 </div>
 
                 {/* Price Range Filter */}
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-3">Price Range</h3>
+                  <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Price Range</h3>
                   <div className="space-y-4">
-                    <input
-                      type="range"
-                      min="0"
-                      max="1000"
-                      value={priceRange[1]}
-                      onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
-                      className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                    />
-                    <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-                      <span>${priceRange[0]}</span>
-                      <span>${priceRange[1]}</span>
+                    <div className="relative">
+                      <input
+                        type="range"
+                        min="0"
+                        max="1000"
+                        value={priceRange[1]}
+                        onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
+                        className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-amber-600 [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-amber-600 [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-0"
+                        style={{
+                          background: `linear-gradient(to right, #d97706 ${(priceRange[0] / 1000) * 100}%, #d97706 ${(priceRange[1] / 1000) * 100}%, #e5e7eb ${(priceRange[1] / 1000) * 100}%)`
+                        }}
+                      />
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600 dark:text-gray-400">${priceRange[0]}</span>
+                      <span className="text-gray-600 dark:text-gray-400">${priceRange[1]}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Filter Actions */}
-                <div className="flex flex-col space-y-3">
+                <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700">
                   <Button
                     onClick={handleFilterChange}
                     variant="primary"

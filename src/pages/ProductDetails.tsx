@@ -4,11 +4,15 @@ import { ChevronRight, Check, Star, ShoppingCart } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { products } from '../data/products';
 import ProductCard from '../components/ui/ProductCard';
+import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
   
   const product = products.find(p => p.id === Number(id));
   
@@ -81,10 +85,17 @@ const ProductDetails: React.FC = () => {
     setQuantity(quantity + 1);
   };
 
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product, quantity);
+      showToast(`${quantity} ${product.name} added to cart`, 'success');
+    }
+  };
+
   return (
     <div className="pt-16 lg:pt-20">
       {/* Breadcrumbs */}
-      <div className="bg-gray-50 dark:bg-gray-900 py-4">
+      <div className="bg-gray-50 dark:bg-black py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-1 text-sm text-gray-500 dark:text-gray-400">
@@ -223,6 +234,7 @@ const ProductDetails: React.FC = () => {
                 <Button 
                   variant="primary" 
                   className="w-full sm:w-auto flex items-center justify-center"
+                  onClick={handleAddToCart}
                 >
                   <ShoppingCart size={18} className="mr-2" />
                   Add to Cart
@@ -251,7 +263,7 @@ const ProductDetails: React.FC = () => {
       </section>
 
       {/* Product Tabs */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900">
+      <section className="py-12 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex border-b border-gray-200 dark:border-gray-700 mb-8">
             <button
