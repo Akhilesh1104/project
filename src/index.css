@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'aos/dist/aos.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-light-text dark:text-dark-text bg-light-bg dark:bg-dark-bg transition-colors duration-400;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-light-text text-light-bg dark:bg-dark-text dark:text-dark-bg hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply border-2 border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-light-text hover:text-light-bg dark:hover:bg-dark-text dark:hover:text-dark-bg;
+  }
+
+  .nav-link {
+    @apply relative py-2 text-light-text dark:text-dark-text transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-light-text dark:bg-dark-text transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+/* Swiper customization */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-light-text dark:text-dark-text !important;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-light-text dark:bg-dark-text !important;
+}
+
+/* AOS customization */
+[data-aos] {
+  @apply transition-transform duration-700;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-light-bg dark:bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-light-text/20 dark:bg-dark-text/20 rounded-full hover:bg-light-text/30 dark:hover:bg-dark-text/30 transition-colors;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-2 outline-light-text dark:outline-dark-text outline-offset-2 rounded;
+}
+
+/* Theme transition */
+.theme-transition {
+  @apply transition-colors duration-400;
+}
