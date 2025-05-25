@@ -24,8 +24,7 @@ const About: React.FC = () => {
       <div className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/4846092/pexels-photo-4846092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="Marble workshop" 
+            src="https://img.freepik.com/free-photo/luxury-hotel-reception-hall-lounge-restaurant-with-high-ceiling_105762-1771.jpg?ga=GA1.1.1184042227.1748181306&semt=ais_hybrid&w=740" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>

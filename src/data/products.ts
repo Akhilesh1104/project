@@ -7,7 +7,7 @@ export const products: Product[] = [
     type: "marble",
     price: 79.99,
     unit: "sq ft",
-    image: "https://images.pexels.com/photos/7319338/pexels-photo-7319338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://img.freepik.com/free-photo/stone-texture-background-copy-space_1194-602038.jpg?ga=GA1.1.1184042227.1748181306&semt=ais_hybrid&w=740",
     description: "Classic Italian Carrara marble with a bright white background and soft gray veining. Perfect for kitchen countertops, bathrooms, and flooring.",
     details: {
       origin: "Italy",

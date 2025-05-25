@@ -187,7 +187,7 @@ const Contact: React.FC = () => {
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                 <div className="aspect-video relative">
                   <img 
-                    src="https://images.pexels.com/photos/5490680/pexels-photo-5490680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src="https://img.freepik.com/free-photo/3d-rendering-modern-luxury-hotel-office-reception-meeting-lounge_105762-2023.jpg?ga=GA1.1.1184042227.1748181306&semt=ais_hybrid&w=740"
                     alt="Marble&Stone showroom" 
                     className="w-full h-full object-cover"
                   />
