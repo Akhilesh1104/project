@@ -34,7 +34,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({ products }) => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gray-50 dark:bg-neutral-900">
+    <section className="py-16 px-4 bg-gray-50 dark:bg-black">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
