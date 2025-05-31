@@ -47,7 +47,7 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
             {/* Logo */}
             <Logo 
               isScrolled={isScrolled}
@@ -55,12 +55,12 @@ const Header: React.FC = () => {
             />
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-4 lg:space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-medium transition-colors duration-300 hover:text-amber-600 ${
+                  className={`font-medium text-sm lg:text-base transition-colors duration-300 hover:text-amber-600 ${
                     location.pathname === link.path
                       ? 'text-amber-600'
                       : isScrolled || theme === 'dark'
@@ -74,31 +74,31 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <ThemeToggle />
               <button 
                 onClick={() => setIsSearchOpen(true)}
-                className={`p-1 rounded-full transition-colors duration-300 ${
+                className={`p-1.5 sm:p-2 rounded-full transition-colors duration-300 ${
                   isScrolled || theme === 'dark'
                     ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
                     : 'text-white hover:text-amber-200'
                 }`}
                 aria-label="Search"
               >
-                <Search size={20} />
+                <Search className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <Link 
                 to="/cart" 
-                className={`p-1 rounded-full transition-colors duration-300 relative ${
+                className={`p-1.5 sm:p-2 rounded-full transition-colors duration-300 relative ${
                   isScrolled || theme === 'dark'
                     ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
                     : 'text-white hover:text-amber-200'
                 }`}
                 aria-label="Cart"
               >
-                <ShoppingCart size={20} />
+                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
                 {items.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-amber-600 text-white text-[10px] sm:text-xs font-bold rounded-full w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center">
                     {items.length}
                   </span>
                 )}
@@ -107,14 +107,14 @@ const Header: React.FC = () => {
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`md:hidden p-1 rounded-full transition-colors duration-300 ${
+                className={`md:hidden p-1.5 sm:p-2 rounded-full transition-colors duration-300 ${
                   isScrolled || theme === 'dark'
                     ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
                     : 'text-white hover:text-amber-200'
                 }`}
                 aria-label="Toggle menu"
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
               </button>
             </div>
           </div>
@@ -123,13 +123,13 @@ const Header: React.FC = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden bg-white dark:bg-dark-surface shadow-lg">
-            <div className="container mx-auto px-4 py-4">
-              <nav className="flex flex-col space-y-4">
+            <div className="container mx-auto px-4 py-3 sm:py-4">
+              <nav className="flex flex-col space-y-3 sm:space-y-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`font-medium py-2 transition-colors duration-300 ${
+                    className={`font-medium py-2 text-sm sm:text-base transition-colors duration-300 ${
                       location.pathname === link.path
                         ? 'text-amber-600'
                         : 'text-gray-600 dark:text-dark-text hover:text-amber-600 dark:hover:text-amber-600'

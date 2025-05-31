@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import Button from '../components/ui/Button';
 
@@ -11,22 +11,6 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
-
-  // SEO improvements
-  useEffect(() => {
-    document.title = 'Contact Us | Marble&Stone';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Get in touch with Marble&Stone. Contact us for inquiries about our premium marble, granite, and tile products or to schedule a consultation.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Get in touch with Marble&Stone. Contact us for inquiries about our premium marble, granite, and tile products or to schedule a consultation.';
-      document.head.appendChild(meta);
-    }
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -204,8 +188,8 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 dark:text-white mb-1">Address</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        123 Stone Ave, Marble City, MC 12345<br />
-                        United States
+                        133/281 A-M Block Kidwai Nagar,<br />
+                        Kanpur Nagar, UttarPradesh(208023)
                       </p>
                     </div>
                   </div>
@@ -215,8 +199,8 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 dark:text-white mb-1">Phone</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        <a href="tel:+15551234567" className="hover:text-amber-600 transition-colors">
-                          (555) 123-4567
+                        <a href="tel:+919235879986" className="hover:text-amber-600 transition-colors">
+                          +91 9235879986
                         </a>
                       </p>
                     </div>
@@ -227,8 +211,8 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 dark:text-white mb-1">Email</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        <a href="mailto:info@marbleandstone.com" className="hover:text-amber-600 transition-colors">
-                          info@marbleandstone.com
+                        <a href="mailto:contact@kdmarble.com" className="hover:text-amber-600 transition-colors">
+                          contact@kdmarble.com
                         </a>
                       </p>
                     </div>

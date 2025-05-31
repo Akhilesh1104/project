@@ -24,8 +24,6 @@ const ProductDetails: React.FC = () => {
   // SEO improvements
   useEffect(() => {
     if (product) {
-      document.title = `${product.name} | Marble&Stone`;
-      
       // Update meta description
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {

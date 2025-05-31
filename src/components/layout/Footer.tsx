@@ -65,25 +65,26 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-amber-600 flex-shrink-0 mt-1" />
                 <span className="text-gray-600 dark:text-dark-muted">
-                  123 Stone Ave, Marble City, MC 12345
+                  133/281 A-M Block Kidwai Nagar,<br />
+                  Kanpur Nagar, UttarPradesh(208023)
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="mr-2 text-amber-600 flex-shrink-0" />
                 <a 
-                  href="tel:+15551234567" 
+                  href="tel:+919235879986" 
                   className="text-gray-600 dark:text-dark-muted hover:text-amber-600 dark:hover:text-amber-600 transition-colors duration-300"
                 >
-                  (555) 123-4567
+                  +91 9235879986
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-amber-600 flex-shrink-0" />
                 <a 
-                  href="mailto:info@kdmarble.com" 
+                  href="mailto:contact@kdmarble.com" 
                   className="text-gray-600 dark:text-dark-muted hover:text-amber-600 dark:hover:text-amber-600 transition-colors duration-300"
                 >
-                  info@kdmarble.com
+                  contact@kdmarble.com
                 </a>
               </li>
               <li className="flex items-start">

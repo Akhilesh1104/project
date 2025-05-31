@@ -1,23 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MapPin, Award, Users, Clock } from 'lucide-react';
 
 const About: React.FC = () => {
-  // SEO improvements
-  useEffect(() => {
-    document.title = 'About Us | Marble&Stone';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Learn about Marble&Stone, our history, values, and commitment to providing premium natural stone products since 1995.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Learn about Marble&Stone, our history, values, and commitment to providing premium natural stone products since 1995.';
-      document.head.appendChild(meta);
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-white dark:bg-black pt-16 lg:pt-20">
       {/* Hero Section */}
