@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
               <span className="block">Transform Your Space</span>
-              <span className="block text-amber-400">With Natural Beauty</span>
+              <span className="block text-amber-500">With Natural Beauty</span>
             </h1>
           </div>
           
