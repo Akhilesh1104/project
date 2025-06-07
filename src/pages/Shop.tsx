@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ui/ProductCard';
 import { products } from '../data/products';
-import { Product } from '../types';
-import { Filter, X, SlidersHorizontal, Check } from 'lucide-react';
+import { X, SlidersHorizontal, Check } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 const Shop: React.FC = () => {
@@ -30,7 +29,6 @@ const Shop: React.FC = () => {
   });
 
   // Get unique categories and types
-  const categories = Array.from(new Set(products.map(p => p.category)));
   const types = Array.from(new Set(products.map(p => p.type)));
 
   const handleFilterChange = () => {

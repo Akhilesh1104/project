@@ -130,11 +130,11 @@ const ProductDetails: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Image */}
-            <div className="rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-md">
+            <div className="rounded-lg overflow-hidden bg-white dark:bg-black shadow-md">
               <img 
                 src={product.image} 
                 alt={product.name} 
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
 
