@@ -109,8 +109,8 @@ const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`md:hidden p-1.5 sm:p-2 rounded-full transition-colors duration-300 ${
                   isScrolled || theme === 'dark'
-                    ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
-                    : 'text-white hover:text-amber-200'
+                    ? 'text-gray-900 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
+                    : 'text-gray-900 hover:text-amber-600'
                 }`}
                 aria-label="Toggle menu"
               >

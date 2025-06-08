@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div 
       onClick={handleCardClick}
-      className="group relative bg-white dark:bg-dark-surface rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-300 dark:border-gray-600 hover:border-amber-500 dark:hover:border-gray-400 cursor-pointer h-[400px]"
+      className="group relative bg-white dark:bg-dark-surface rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-400 dark:border-gray-600 hover:border-amber-500 dark:hover:border-gray-400 cursor-pointer h-[400px]"
     >
       {/* Product Image with Overlay */}
       <div className="relative overflow-hidden h-[250px]">
