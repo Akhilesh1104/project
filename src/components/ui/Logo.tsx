@@ -18,12 +18,12 @@ const Logo: React.FC<LogoProps> = ({ className = '', isScrolled = false, isDark 
       </div>
       <div className="flex flex-col">
         <span className={`text-base sm:text-xl font-bold tracking-tight ${
-          isScrolled || isDark ? 'text-gray-900 dark:text-white' : 'text-white'
+          isScrolled || isDark ? 'text-gray-800 dark:text-white' : 'text-gray-800'
         }`}>
           KD Marble<span className="text-amber-500">&</span>Granite
         </span>
         <span className={`text-[10px] sm:text-xs tracking-wider ${
-          isScrolled || isDark ? 'text-gray-600 dark:text-gray-400' : 'text-gray-200'
+          isScrolled || isDark ? 'text-gray-600 dark:text-gray-500' : 'text-gray-600'
         }`}>
           PREMIUM STONE SOLUTIONS
         </span>

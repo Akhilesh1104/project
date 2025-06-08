@@ -65,7 +65,7 @@ const Header: React.FC = () => {
                       ? 'text-amber-600'
                       : isScrolled || theme === 'dark'
                         ? 'text-gray-900 dark:text-white'
-                        : 'text-white'
+                        : 'text-gray-900'
                   }`}
                 >
                   {link.name}
@@ -78,10 +78,10 @@ const Header: React.FC = () => {
               <ThemeToggle />
               <button 
                 onClick={() => setIsSearchOpen(true)}
-                className={`p-1.5 sm:p-2 rounded-full transition-colors duration-300 ${
+                className={`p-1.5 sm:p-2 rounded-full transition-colors duration-300 hover:text-amber-600 ${
                   isScrolled || theme === 'dark'
-                    ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
-                    : 'text-white hover:text-amber-200'
+                    ? 'text-gray-900 dark:text-gray-300 dark:hover:text-amber-600'
+                    : 'text-gray-900 '
                 }`}
                 aria-label="Search"
               >
@@ -89,10 +89,10 @@ const Header: React.FC = () => {
               </button>
               <Link 
                 to="/cart" 
-                className={`p-1.5 sm:p-2 rounded-full transition-colors duration-300 relative ${
+                className={`p-1.5 sm:p-2 rounded-full transition-colors duration-300 relative hover:text-amber-600 ${
                   isScrolled || theme === 'dark'
-                    ? 'text-gray-600 hover:text-amber-600 dark:text-gray-300 dark:hover:text-amber-600'
-                    : 'text-white hover:text-amber-200'
+                    ? 'text-gray-900 dark:text-gray-300 dark:hover:text-amber-600'
+                    : 'text-gray-900'
                 }`}
                 aria-label="Cart"
               >
